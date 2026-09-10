@@ -23,7 +23,8 @@ public class Puzzle {
     private String notes;
     private int progressPercent;
     private int completionTime;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn
     private int userId;
 
