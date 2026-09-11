@@ -49,5 +49,9 @@ public class PuzzleController {
         }).orElse(null);
     }
 
+    @DeleteMapping("/{id}")
+    public void deletePuzzle(@PathVariable int id) {
+        puzzleRepository.deleteById(id);
+    }
 
 }
