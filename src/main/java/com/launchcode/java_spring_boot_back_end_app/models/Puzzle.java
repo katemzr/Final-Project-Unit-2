@@ -27,6 +27,37 @@ public class Puzzle {
     @JoinColumn(name = "user_id")
     private User user;
 
+    public Puzzle() {
+    }
+
+    public Puzzle(String title,
+                  String brand,
+                  String artist,
+                  int pieceCount,
+                  float height,
+                  float width,
+                  String location,
+                  LocalDate purchaseDate,
+                  String retailer,
+                  LocalDate startDate,
+                  String notes,
+                  int progressPercent,
+                  int completionTime) {
+        this.title = title;
+        this.brand = brand;
+        this.artist = artist;
+        this.pieceCount = pieceCount;
+        this.height = height;
+        this.width = width;
+        this.location = location;
+        this.purchaseDate = purchaseDate;
+        this.retailer = retailer;
+        this.startDate = startDate;
+        this.notes = notes;
+        this.progressPercent = progressPercent;
+        this.completionTime = completionTime;
+    }
+
     public int getId() {
         return id;
     }
