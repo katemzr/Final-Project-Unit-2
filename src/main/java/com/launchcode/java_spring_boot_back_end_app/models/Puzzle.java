@@ -1,11 +1,10 @@
 package com.launchcode.java_spring_boot_back_end_app.models;
 
 import jakarta.persistence.*;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "puzzles")
+@Table(name = "puzzle")
 public class Puzzle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,15 +16,47 @@ public class Puzzle {
     private float height;
     private float width;
     private String location;
-    private Date purchaseDate;
+    private LocalDate purchaseDate;
     private String retailer;
-    private Date startDate;
+    private LocalDate startDate;
     private String notes;
     private int progressPercent;
     private int completionTime;
-    @ManyToOne
-    @JoinColumn
-    private int userId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Puzzle() {
+    }
+
+    public Puzzle(String title,
+                  String brand,
+                  String artist,
+                  int pieceCount,
+                  float height,
+                  float width,
+                  String location,
+                  LocalDate purchaseDate,
+                  String retailer,
+                  LocalDate startDate,
+                  String notes,
+                  int progressPercent,
+                  int completionTime) {
+        this.title = title;
+        this.brand = brand;
+        this.artist = artist;
+        this.pieceCount = pieceCount;
+        this.height = height;
+        this.width = width;
+        this.location = location;
+        this.purchaseDate = purchaseDate;
+        this.retailer = retailer;
+        this.startDate = startDate;
+        this.notes = notes;
+        this.progressPercent = progressPercent;
+        this.completionTime = completionTime;
+    }
 
     public int getId() {
         return id;
@@ -91,11 +122,11 @@ public class Puzzle {
         this.location = location;
     }
 
-    public Date getPurchaseDate() {
+    public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(Date purchaseDate) {
+    public void setPurchaseDate(LocalDate purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
@@ -107,11 +138,11 @@ public class Puzzle {
         this.retailer = retailer;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
@@ -139,11 +170,12 @@ public class Puzzle {
         this.completionTime = completionTime;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
+
 }
