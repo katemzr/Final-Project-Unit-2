@@ -17,4 +17,11 @@ public class PuzzleController {
     public List<Puzzle>getAllPuzzles() {
         return puzzleRepository.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Puzzle getPuzzleById(@PathVariable int id) {
+        return puzzleRepository.findById(id).orElse(null);
+    }
+
+
 }
