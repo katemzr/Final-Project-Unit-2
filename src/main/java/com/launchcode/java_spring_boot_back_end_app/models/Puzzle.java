@@ -24,11 +24,11 @@ public class Puzzle {
     private String notes;
     private int progressPercent;
     private int completionTime;
-/*
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-*/
+
     public Puzzle() {
     }
 
@@ -171,7 +171,7 @@ public class Puzzle {
     public void setCompletionTime(int completionTime) {
         this.completionTime = completionTime;
     }
-/*
+
     public User getUser() {
         return user;
     }
@@ -179,5 +179,5 @@ public class Puzzle {
     public void setUser(User user) {
         this.user = user;
     }
-*/
+
 }
