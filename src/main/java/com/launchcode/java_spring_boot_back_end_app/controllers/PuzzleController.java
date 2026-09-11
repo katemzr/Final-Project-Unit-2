@@ -23,5 +23,10 @@ public class PuzzleController {
         return puzzleRepository.findById(id).orElse(null);
     }
 
+    @PostMapping
+    public Puzzle createPuzzle(@RequestBody Puzzle puzzle) {
+        return puzzleRepository.save(puzzle);
+    }
+
 
 }
