@@ -1,8 +1,6 @@
 package com.launchcode.java_spring_boot_back_end_app.models;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
-
 import java.time.LocalDate;
 
 @Entity
