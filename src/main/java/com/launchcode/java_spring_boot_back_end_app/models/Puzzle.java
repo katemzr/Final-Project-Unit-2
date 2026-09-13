@@ -22,6 +22,7 @@ public class Puzzle {
     private String notes;
     private int progressPercent;
     private int completionTime;
+    private boolean onLoan;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -42,7 +43,8 @@ public class Puzzle {
                   LocalDate startDate,
                   String notes,
                   int progressPercent,
-                  int completionTime) {
+                  int completionTime,
+                  boolean onLoan) {
         this.title = title;
         this.brand = brand;
         this.artist = artist;
@@ -56,6 +58,7 @@ public class Puzzle {
         this.notes = notes;
         this.progressPercent = progressPercent;
         this.completionTime = completionTime;
+        this.onLoan = onLoan;
     }
 
     public int getId() {
@@ -168,6 +171,14 @@ public class Puzzle {
 
     public void setCompletionTime(int completionTime) {
         this.completionTime = completionTime;
+    }
+
+    public boolean isOnLoan() {
+        return onLoan;
+    }
+
+    public void setOnLoan(boolean onLoan) {
+        this.onLoan = onLoan;
     }
 
     public User getUser() {
