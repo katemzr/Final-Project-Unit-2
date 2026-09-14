@@ -32,6 +32,7 @@ public class PuzzleController {
     public Puzzle updatePuzzle(@PathVariable int id, @RequestBody Puzzle updatedPuzzle) {
         return puzzleRepository.findById(id).map(puzzle -> {
             puzzle.setTitle(updatedPuzzle.getTitle());
+            puzzle.setImageURL(updatedPuzzle.getImageURL());
             puzzle.setBrand(updatedPuzzle.getBrand());
             puzzle.setArtist(updatedPuzzle.getArtist());
             puzzle.setPieceCount(updatedPuzzle.getPieceCount());
