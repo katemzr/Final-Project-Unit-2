@@ -91,7 +91,7 @@ useEffect(() => {
 
     return (
         <div className="form">
-            <h1>Add a New Puzzle</h1>
+            <h1>{puzzleToEdit ? "Edit Puzzle" : "Add a New Puzzle"}</h1>
             <fieldset>
                 <form onSubmit={handleAddCard}>
                     <div className="form-group full-width">
