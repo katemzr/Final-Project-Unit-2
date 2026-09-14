@@ -45,6 +45,7 @@ public class PuzzleController {
             puzzle.setNotes(updatedPuzzle.getNotes());
             puzzle.setProgressPercent(updatedPuzzle.getProgressPercent());
             puzzle.setCompletionTime(updatedPuzzle.getCompletionTime());
+            puzzle.setOnLoan(updatedPuzzle.isOnLoan());
 
             return puzzleRepository.save(puzzle);
         }).orElse(null);

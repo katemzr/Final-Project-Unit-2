@@ -1,4 +1,5 @@
 import DeletePuzzle from "./DeletePuzzle";
+import EditPuzzle from "./EditPuzzle";
 
 const PuzzleCard = ({ 
     id, 
@@ -19,19 +20,10 @@ const PuzzleCard = ({
     completionTime,
     onLoan, 
     notes,
+    onEditPuzzle,
     onDeletePuzzle
  }) => {
     
-    /*const [ isVisible, setIsVisible ] = useState(true);
-    
-    const handleDelete = () => {
-        setIsVisible(false);
-    }
-    
-    if (!isVisible){ 
-        return null;
-    }
-   */ 
     return (
         <div className="card">
             <div>
@@ -58,6 +50,7 @@ const PuzzleCard = ({
                 <p>Notes:{notes}</p>
             </div>
             <div>
+                <EditPuzzle onEdit={() => onEditPuzzle(id)} />
                 <DeletePuzzle onDelete={() => onDeletePuzzle(id)} />
             </div>
         </div>

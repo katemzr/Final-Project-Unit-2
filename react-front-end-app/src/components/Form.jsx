@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-
-const Form = ({onAddPuzzle}) => {
+const Form = ({ onAddPuzzle, onUpdatePuzzle, puzzleToEdit }) => {
     const [imageURL, setImageURL] = useState("");
     const [puzzleTitle,  setPuzzleTitle] = useState("");
     const [puzzleBrand, setPuzzleBrand] = useState("");
@@ -41,7 +40,7 @@ const Form = ({onAddPuzzle}) => {
 
     const handleAddCard = (e) => {
         e.preventDefault();
-        const newCard = {   
+        const puzzleData = {   
             imageURL: imageURL || "/images/Placeholder.jpg",
             title: puzzleTitle,
             brand: puzzleBrand,
@@ -60,13 +59,39 @@ const Form = ({onAddPuzzle}) => {
             notes: notes,
         };
 
-       onAddPuzzle(newCard);
+        if (puzzleToEdit) {
+            onUpdatePuzzle(puzzleToEdit.id, puzzleData);
+        } else {
+            onAddPuzzle(puzzleData);
+        }
+
        handleReset(); 
     };
 
+useEffect(() => {
+    if (puzzleToEdit) {
+        setImageURL(puzzleToEdit.imageURL || "");
+        setPuzzleTitle(puzzleToEdit.title || "");
+        setPuzzleBrand(puzzleToEdit.brand || "");
+        setPuzzleArtist(puzzleToEdit.artist || "");
+        setPieceCount(puzzleToEdit.pieceCount || "");
+        setHeight(puzzleToEdit.height || "");
+        setWidth(puzzleToEdit.width || "");
+        setLocation(puzzleToEdit.location || "");
+        setPurchaseDate(puzzleToEdit.purchaseDate || "");
+        setRetailer(puzzleToEdit.retailer || "");
+        setStartDate(puzzleToEdit.startDate || "");
+        setProgressPercent(puzzleToEdit.progressPercent || "");
+        setCompletionDate(puzzleToEdit.completionDate || "");
+        setCompletionTime(puzzleToEdit.completionTime || "");
+        setOnLoan(puzzleToEdit.onLoan || false);
+        setNotes(puzzleToEdit.notes || "");
+    }
+}, [puzzleToEdit]);
+
     return (
         <div className="form">
-            <h1>Add a New Puzzle</h1>
+            <h1>{puzzleToEdit ? "Edit Puzzle" : "Add a New Puzzle"}</h1>
             <fieldset>
                 <form onSubmit={handleAddCard}>
                     <div className="form-group full-width">
@@ -291,7 +316,7 @@ const Form = ({onAddPuzzle}) => {
 
                     <button className="buttons"
                         type="submit" 
-                        >Add
+                        >{puzzleToEdit ? "Update" : "Add"}
                     </button>
                 </div> 
                 </form>
