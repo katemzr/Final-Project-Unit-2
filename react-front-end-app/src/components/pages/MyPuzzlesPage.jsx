@@ -7,6 +7,7 @@ import apiClient from "../../config/api-client";
 const MyPuzzlesPage = () => {
   
     const [ puzzles, setPuzzles ] = useState([]);
+    const [ puzzleToEdit, setPuzzleToEdit ] = useState(null);
 
     useEffect(() => {
 
@@ -37,9 +38,26 @@ const MyPuzzlesPage = () => {
         }
     };
 
+    const handleEditPuzzle = (id) => {
+        const selectedPuzzle = puzzles.find(
+            (puzzle) => puzzle.id === id
+        );
+        setPuzzleToEdit(selectedPuzzle);
+    };
 
 
-const puzzleItems = puzzles.map(puzzle => 
+    const handleAddPuzzle = async (newPuzzle) => {
+        try {
+            const response = await apiClient.post("/puzzles",newPuzzle); //POST new puzzles to the database
+        
+            setPuzzles((prevPuzzles) => [...prevPuzzles, response.data]);
+
+        } catch (error) {
+            console.error("Error adding puzzle:", error)
+        }
+    };
+
+    const puzzleItems = puzzles.map(puzzle => 
         <PuzzleCard 
             key={puzzle.id}
             id={puzzle.id} 
@@ -59,19 +77,9 @@ const puzzleItems = puzzles.map(puzzle =>
             completionTime={puzzle.completionTime}
             onLoan={puzzle.onLoan}
             notes={puzzle.notes} 
-            onDeletePuzzle={handleDeletePuzzle}/> );
-
-
-    const handleAddPuzzle = async (newPuzzle) => {
-        try {
-            const response = await apiClient.post("/puzzles",newPuzzle); //POST new puzzles to the database
-        
-            setPuzzles((prevPuzzles) => [...prevPuzzles, response.data]);
-
-        } catch (error) {
-            console.error("Error adding puzzle:", error)
-        }
-    };
+            onEditPuzzle={handleEditPuzzle}
+            onDeletePuzzle={handleDeletePuzzle} /> 
+        );
 
 
     return (
@@ -82,7 +90,10 @@ const puzzleItems = puzzles.map(puzzle =>
                 {puzzleItems}                
               </div> 
 
-            <Form onAddPuzzle={handleAddPuzzle}/>
+            <Form 
+                onAddPuzzle={handleAddPuzzle}
+                puzzleToEdit={puzzleToEdit}
+            />
         </main>
        
     );
