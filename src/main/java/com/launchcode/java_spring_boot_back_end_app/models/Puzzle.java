@@ -10,6 +10,7 @@ public class Puzzle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
+    private String imageURL;
     private String brand;
     private String artist;
     private int pieceCount;
@@ -32,6 +33,7 @@ public class Puzzle {
     }
 
     public Puzzle(String title,
+                  String imageURL,
                   String brand,
                   String artist,
                   int pieceCount,
@@ -46,6 +48,7 @@ public class Puzzle {
                   int completionTime,
                   boolean onLoan) {
         this.title = title;
+        this.imageURL = imageURL;
         this.brand = brand;
         this.artist = artist;
         this.pieceCount = pieceCount;
@@ -76,6 +79,10 @@ public class Puzzle {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public String getImageURL() { return imageURL; }
+
+    public void setImageURL(String imageURL) { this.imageURL = imageURL; }
 
     public String getBrand() {
         return brand;

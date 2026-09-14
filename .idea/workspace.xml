@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71a63ebf-e497-43dc-9fe1-96dc2a60c262" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/java_spring_boot_back_end_app/controllers/PuzzleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/java_spring_boot_back_end_app/controllers/PuzzleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/java_spring_boot_back_end_app/models/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/java_spring_boot_back_end_app/models/Puzzle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.JavaSpringBootBackEndAppApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "corsRules",
     "kotlin-language-version-configured": "true",
