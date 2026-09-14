@@ -1,7 +1,9 @@
 package com.launchcode.java_spring_boot_back_end_app.controllers;
 
 import com.launchcode.java_spring_boot_back_end_app.models.Puzzle;
+import com.launchcode.java_spring_boot_back_end_app.models.User;
 import com.launchcode.java_spring_boot_back_end_app.repositories.PuzzleRepository;
+import com.launchcode.java_spring_boot_back_end_app.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,6 +14,8 @@ import java.util.List;
 public class PuzzleController {
     @Autowired
     private PuzzleRepository puzzleRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping
     public List<Puzzle>getAllPuzzles() {
