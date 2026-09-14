@@ -1,0 +1,149 @@
+
+
+header {
+    background-color: rgb(132, 158, 149);
+    color: #253238;
+    font-size: 60px;
+    padding: 20px; 
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f4f7fb;
+    color: #253238;
+    line-height: 1.6;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    background: rgb(194, 191, 191);
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow:  0 4px 6px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    background-color: rgb(132, 158, 149);
+    color: rgb(252, 252, 252);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 15px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.buttons:hover {
+    background-color: rgb(135, 180, 165);
+    transform: translateY(-2px);
+}
+
+.title-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    height: 100px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.homepage-main {
+    display: flex;
+    flex: 1;
+    font-size: x-large;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgb(194, 191, 191);
+  border-radius: 8px;
+  box-shadow:  0 4px 6px;
+}
+
+.form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 350px;
+}
+
+.form-group label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.full-width {
+    flex-basis: 100%;
+}
+
+.table {
+    background: rgb(194, 191, 191);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+}
+
+.square {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer {
+ padding-top: 100px;
+}
