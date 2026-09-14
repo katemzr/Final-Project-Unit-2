@@ -20,6 +20,7 @@ const PuzzleCard = ({
     completionTime,
     onLoan, 
     notes,
+    onEditPuzzle,
     onDeletePuzzle
  }) => {
     
