@@ -39,12 +39,32 @@ const MyPuzzlesPage = () => {
     };
 
     const handleEditPuzzle = (id) => {
-        const selectedPuzzle = puzzles.find(
+        const selectedPuzzle = puzzles.find( //EDIT an existing puzzle card
             (puzzle) => puzzle.id === id
         );
+
         setPuzzleToEdit(selectedPuzzle);
     };
 
+   const handleUpdatePuzzle = async (id, updatedPuzzle) => { 
+        try {
+            const response = await apiClient.put(  //After editing, UPDATE an existing puzzle
+                `/puzzles/${id}`,
+                updatedPuzzle
+            );
+
+            setPuzzles((prevPuzzles)  =>
+                prevPuzzles.map((puzzle) =>
+                    puzzle.id === id ? response.data : puzzle
+                )
+            );
+
+            setPuzzleToEdit(null);
+
+        } catch (error) {
+            console.error("Error updating puzzle:", error);
+        }
+    };
 
     const handleAddPuzzle = async (newPuzzle) => {
         try {
@@ -92,6 +112,7 @@ const MyPuzzlesPage = () => {
 
             <Form 
                 onAddPuzzle={handleAddPuzzle}
+                onUpdatePuzzle={handleUpdatePuzzle}
                 puzzleToEdit={puzzleToEdit}
             />
         </main>

@@ -316,7 +316,7 @@ useEffect(() => {
 
                     <button className="buttons"
                         type="submit" 
-                        >Add
+                        >{puzzleToEdit ? "Update" : "Add"}
                     </button>
                 </div> 
                 </form>
