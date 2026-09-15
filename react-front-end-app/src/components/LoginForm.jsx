@@ -53,7 +53,7 @@ return (
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email (admin@admin.com):</label>
+          <label>Email (user@puzzles.com):</label>
           <input
             type="email"
             name="email"

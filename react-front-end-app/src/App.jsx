@@ -18,8 +18,8 @@ import LoginForm from "./components/LoginForm";
 function App() {
  const [ user, setUser ] = useState(null);
  const handleLogin = (credentials) => {
-    if (credentials.email === "admin@admin.com" && credentials.password === "1234") {
-      setUser({ name: "Admin", role: "administrator" });
+    if (credentials.email === "user@puzzles.com" && credentials.password === "1234") {
+      setUser({ name: "User", role: "user" });
     }
  };
 
