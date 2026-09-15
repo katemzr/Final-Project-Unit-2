@@ -39,38 +39,49 @@ const ContactUsPage = () => {
                 Fill out the contact form below, and we will get back to you as soon as we can. 
                 Thanks for helping us make The Last Piece an even better place for puzzle lovers!</p>
 
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                    <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <label htmlFor="message">Message:</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                />
+
+            <div className="contact-form">
+                <form onSubmit={handleSubmit}>
+
+                    <div className="contact-form-group">
+                        <label htmlFor="name">Name:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>    
+                    
+                    <div className="contact-form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="contact-form-group">
+                        <label htmlFor="message">Message:</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>    
 
                     <button type="submit">Send Message</button>
 
-
-            </form>    
+                </form>  
+            </div>      
             
             {submitted && (
                 <p>🧩Thank you for contacting us!🧩</p>
