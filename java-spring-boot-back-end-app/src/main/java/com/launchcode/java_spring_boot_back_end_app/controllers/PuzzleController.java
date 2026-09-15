@@ -32,6 +32,17 @@ public class PuzzleController {
         return puzzleRepository.save(puzzle);
     }
 
+    @PostMapping("/user/{userId}")
+    public Puzzle createPuzzleForUser(@PathVariable int userId, @RequestBody Puzzle puzzle) {
+        User user = userRepository.findById(userId).orElse(null);
+
+        if (user == null) {
+            return null;
+        }
+        puzzle.setUser(user);
+        return puzzleRepository.save(puzzle);
+    }
+
     @PutMapping("/{id}")
     public Puzzle updatePuzzle(@PathVariable int id, @RequestBody Puzzle updatedPuzzle) {
         return puzzleRepository.findById(id).map(puzzle -> {

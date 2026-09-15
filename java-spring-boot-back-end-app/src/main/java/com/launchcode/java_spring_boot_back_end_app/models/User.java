@@ -1,6 +1,7 @@
 package com.launchcode.java_spring_boot_back_end_app.models;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class User {
     private String email;
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Puzzle> puzzles = new ArrayList<>();
 
