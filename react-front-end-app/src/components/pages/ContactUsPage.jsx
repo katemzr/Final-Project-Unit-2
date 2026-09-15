@@ -1,4 +1,36 @@
+import { useState } from "react";
+
 const ContactUsPage = () => {
+
+    const [formData, setFormData] = useState ({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData({  
+            ...formData,  //handles all form data input 
+            [name]: value
+        });
+    };
+
+       const handleSubmit = (event) => {
+        event.preventDefault();
+
+        setSubmitted(true);
+
+        setFormData({
+            name: "",
+            email: "",
+            message: ""
+        });
+    };
+
     return (
         <>
             <h1>Contact Us</h1>    
