@@ -14,7 +14,7 @@ const ContactForm = () => {
         const { name, value } = event.target;
 
         setFormData({  
-            ...formData,  //keep existing form data, but update the filed the user changed
+            ...formData, 
             [name]: value
         });
     };
