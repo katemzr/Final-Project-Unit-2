@@ -104,7 +104,7 @@ const MyPuzzlesPage = () => {
 
     return (
         <main >
-            <h1 className="my-puzzle-h1">My Puzzles Page</h1>
+            <h1 className="my-puzzle-h1">My Puzzles Page🧩</h1>
 
               <div className="card-container"> 
                 {puzzleItems}                
