@@ -1,6 +1,3 @@
-import Animation from "../Animation";
-
-
 const ContactUsPage = () => {
     return (
         <>
