@@ -24,7 +24,7 @@ function LoginForm ({onLogin}) {
         }
 
         if (formData && formData.email) {
-            if (formData.email !== "admin@admin.com") {
+            if (formData.email !== "user@puzzles.com") {
                 tempErrors.email = "Incorrect credentials.";
                 isValid = false;
             }
