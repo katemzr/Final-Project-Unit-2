@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <nav>
       <NavLink to="/" style={({ isActive }) => ({
-        color: isActive ? "rgb(132, 158, 149" : "black",
+        color: isActive ? "rgb(132, 158, 149)" : "black",
         fontWeight: isActive ? "bold" : "normal",
         textDecoration: "none",
         marginRight: "15px",
@@ -14,7 +14,7 @@ function NavBar() {
       <NavLink
         to="/contactus"
         style={({ isActive }) => ({
-          color: isActive ? "rgb(132, 158, 149" : "black",
+          color: isActive ? "rgb(132, 158, 149)" : "black",
           fontWeight: isActive ? "bold" : "normal",
           textDecoration: "none",
           marginRight: "15px",
@@ -25,7 +25,7 @@ function NavBar() {
       <NavLink
         to="/mypuzzles"
         style={({ isActive }) => ({
-          color: isActive ? "rgb(132, 158, 149" : "black",
+          color: isActive ? "rgb(132, 158, 149)" : "black",
           fontWeight: isActive ? "bold" : "normal",
           textDecoration: "none",
           marginRight: "15px",
@@ -36,7 +36,7 @@ function NavBar() {
       <NavLink
         to="/puzzlesuggestions"
         style={({ isActive }) => ({
-          color: isActive ? "rgb(132, 158, 149" : "black",
+          color: isActive ? "rgb(132, 158, 149)" : "black",
           fontWeight: isActive ? "bold" : "normal",
           textDecoration: "none",
           marginRight: "15px",

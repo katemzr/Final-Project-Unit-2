@@ -28,16 +28,18 @@ const SuggestionCard = ( {
             <div>
                 <p><b>{title}</b></p>
                 <p>Brand: {brand}</p>
+                <p>Piece Count: {pieceCount}</p>
             </div>  
-
-            <button onClick={() => setShowDetails(!showDetails)}> //when button is clicked, change showDetails from false to true or true to false
+            
+            {/* When button is clicked, toggle showDetails from false to true or true to false */}
+            <button className="buttons"
+                onClick={() => setShowDetails(!showDetails)} >  
                 {showDetails ? "Hide Details" : "Show Details"}
             </button>
 
             {showDetails && (
                 <div>
                     <p>Artist: {artist}</p>
-                    <p>PieceCount: {pieceCount}</p>
                     <p>Why we love it: {description}</p>
                 </div>
             )}

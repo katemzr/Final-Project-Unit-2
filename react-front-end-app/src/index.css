@@ -192,3 +192,24 @@ body {
 .contact-form-group textarea {
     resize: vertical;
 }
+
+.suggestion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.suggestion-card {
+    width: 280px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+.suggestion-card img {
+    object-fit: contain;
+}
