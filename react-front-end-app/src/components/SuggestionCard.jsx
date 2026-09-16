@@ -27,7 +27,6 @@ const SuggestionCard = ( {
 
             <div>
                 <p><b>{title}</b></p>
-                <p>Brand: {brand}</p>
                 <p>Piece Count: {pieceCount}</p>
             </div>  
             
@@ -39,6 +38,7 @@ const SuggestionCard = ( {
 
             {showDetails && (
                 <div>
+                    <p>Brand: {brand}</p>
                     <p>Artist: {artist}</p>
                     <p>Why we love it: {description}</p>
                 </div>
