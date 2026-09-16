@@ -1,3 +1,5 @@
+import SuggestionCard from "../SuggestionCard";
+
 const PuzzleSuggestionsPage = () => {
 
     const suggestedPuzzles = [  //hardcoded puzzles to appear on the Puzzle Suggestions page
@@ -65,6 +67,28 @@ const PuzzleSuggestionsPage = () => {
 
     ];
 
+    return (
+        <>
+            <h1>Puzzle Suggestions</h1>
+
+            <div className="suggestion-container">
+                {suggestedPuzzles.map((puzzle) => (  //create a suggestion card for every puzzle in suggestedPuzzle array
+                    <SuggestionCard
+                    key={puzzle.id}
+                    imageURL={puzzle.imageURL}
+                    alt={puzzle.alt}
+                    title={puzzle.title}
+                    brand={puzzle.brand}
+                    artist={puzzle.artist}
+                    pieceCount={puzzle.pieceCount}
+                    description={puzzle.description}
+                    />
+                ))}
+
+            </div>
+        
+        </>
+    );
 };
 
 export default PuzzleSuggestionsPage;
