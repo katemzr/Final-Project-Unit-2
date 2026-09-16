@@ -32,8 +32,11 @@ const SuggestionCard = ( {
             {showDetails && (
                 <div>
                     <p>Artist: {artist}</p>
+                    <p>PieceCount: {pieceCount}</p>
+                    <p>Why we love it: {description}</p>
+                </div>
             )}
-
+            
         </div>
     );
 };

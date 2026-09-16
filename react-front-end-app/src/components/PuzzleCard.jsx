@@ -41,27 +41,27 @@ const PuzzleCard = ({
 
             <div>
                 <p>{id}</p>
-                <p>Brand:{brand}</p>
-                <p>Artist:{artist}</p>
-                <p>Piece Count:{pieceCount}</p>
-                <p>Height:{height}</p>
-                <p>Width:{width}</p>
-                <p>Location:{location}</p>
-                <p>Purchase Date:{purchaseDate}</p>
-                <p>Retailer:{retailer}</p>
-                <p>Start Date:{startDate}</p>
-                <p>Progress Percent:{progressPercent}</p>
-                <p>Completion Date:{completionDate}</p>
-                <p>Completion Time:{completionTime}</p>
-                <p>On Loan:{onLoan ? "Yes" : "No"}</p>
-                <p>Notes:{notes}</p>
+                <p>Brand: {brand}</p>
+                <p>Artist: {artist}</p>
+                <p>Piece Count: {pieceCount}</p>
+                <p>Height: {height}</p>
+                <p>Width: {width}</p>
+                <p>Location: {location}</p>
+                <p>Purchase Date: {purchaseDate}</p>
+                <p>Retailer: {retailer}</p>
+                <p>Start Date: {startDate}</p>
+                <p>Progress Percent: {progressPercent}</p>
+                <p>Completion Date: {completionDate}</p>
+                <p>Completion Time: {completionTime}</p>
+                <p>On Loan: {onLoan ? "Yes" : "No"}</p>
+                <p>Notes: {notes}</p>
             </div>
 
             <div>
                 <EditPuzzle onEdit={() => onEditPuzzle(id)} />
                 <DeletePuzzle onDelete={() => onDeletePuzzle(id)} />
             </div>
-            
+
         </div>
     );
 }
