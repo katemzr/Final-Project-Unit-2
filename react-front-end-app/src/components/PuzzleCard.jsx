@@ -27,11 +27,18 @@ const PuzzleCard = ({
     return (
         <div className="card">
             <div>
-                <img src={imageURL} alt={alt} width={200} height={300}/>
+                <img 
+                    src={imageURL} 
+                    alt={alt} 
+                    width={200} 
+                    height={300}
+                />
             </div>
+
             <div>
                 <p><b>{title}</b></p>
             </div>
+
             <div>
                 <p>{id}</p>
                 <p>Brand:{brand}</p>
@@ -49,10 +56,12 @@ const PuzzleCard = ({
                 <p>On Loan:{onLoan ? "Yes" : "No"}</p>
                 <p>Notes:{notes}</p>
             </div>
+
             <div>
                 <EditPuzzle onEdit={() => onEditPuzzle(id)} />
                 <DeletePuzzle onDelete={() => onDeletePuzzle(id)} />
             </div>
+            
         </div>
     );
 }
