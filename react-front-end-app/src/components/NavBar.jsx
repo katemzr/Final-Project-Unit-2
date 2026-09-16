@@ -32,6 +32,18 @@ function NavBar() {
         })}
         >My Puzzles
       </NavLink> 
+
+      <NavLink
+        to="/puzzlesuggestions"
+        style={({ isActive }) => ({
+          color: isActive ? "rgb(132, 158, 149" : "black",
+          fontWeight: isActive ? "bold" : "normal",
+          textDecoration: "none",
+          marginRight: "15px",
+        })}
+        >Puzzle Suggestions
+      </NavLink>
+
     </nav>
   );
 }

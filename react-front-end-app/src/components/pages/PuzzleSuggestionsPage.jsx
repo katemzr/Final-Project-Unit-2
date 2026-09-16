@@ -72,7 +72,7 @@ const PuzzleSuggestionsPage = () => {
             <h1>Puzzle Suggestions</h1>
 
             <div className="suggestion-container">
-                {suggestedPuzzles.map((puzzle) => (  //create a suggestion card for every puzzle in suggestedPuzzle array
+                {suggestedPuzzles.map((puzzle) => (  //create a suggestion card for every puzzle in suggestedPuzzles array
                     <SuggestionCard
                     key={puzzle.id}
                     imageURL={puzzle.imageURL}

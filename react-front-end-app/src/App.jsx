@@ -4,14 +4,12 @@ import Header from "./components/Header";
 import HomePage from "./components/pages/HomePage";
 import ContactUsPage from "./components/pages/ContactUsPage";
 import MyPuzzlesPage from "./components/pages/MyPuzzlesPage";
+import PuzzleSuggestionsPage from "./components/pages/PuzzleSuggestionsPage";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import PuzzleCard from "./components/PuzzleCard";
 import "./index.css"
 import LoginForm from "./components/LoginForm";
-
-
-
 
 
 
@@ -40,7 +38,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/contactus" element={<ContactUsPage />} />
-            <Route path="/mypuzzles" element={<MyPuzzlesPage />} />          
+            <Route path="/mypuzzles" element={<MyPuzzlesPage />} />
+            <Route path="/puzzlesuggestions" element={<PuzzleSuggestionsPage />}        />   
           </Routes>
           <div>          
             <button className="buttons" onClick={handleLogout}>Log Out</button>
@@ -53,7 +52,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LoginForm onLogin={handleLogin} />} /> 
             <Route path="/contactus" element={<LoginForm onLogin={handleLogin} />} />
-            <Route path="/mypuzzles" element={<LoginForm onLogin={handleLogin} />} />      
+            <Route path="/mypuzzles" element={<LoginForm onLogin={handleLogin} />} /> 
+            <Route path="/puzzlesuggestions" element={<LoginForm onLogin={handleLogin} />} />     
           </Routes>
         </div>
 
