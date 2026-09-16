@@ -215,6 +215,14 @@ body {
     object-fit: contain;
 }
 
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+}
+
 /*Tablet screens*/
 @media screen and (max-width: 1024px) {
     header {
@@ -245,6 +253,24 @@ body {
 
 /*Phone screens*/
 @media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
     header {
         font-size: 28px;
         padding: 10px;
