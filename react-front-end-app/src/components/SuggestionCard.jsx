@@ -23,7 +23,12 @@ const SuggestionCard = ( {
                     width={200}
                     height={300}
                 />
-            </div>    
+            </div>  
+
+            <div>
+                <p><b>{title}</b></p>
+                <p>Brand: {brand}</p>
+            </div>  
 
             <button onClick={() => setShowDetails(!showDetails)}> //when button is clicked, change showDetails from false to true or true to false
                 {showDetails ? "Hide Details" : "Show Details"}
