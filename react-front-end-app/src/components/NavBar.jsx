@@ -1,48 +1,58 @@
 import { NavLink } from "react-router";
+import { useState } from "react";
 
 function NavBar() {
+
+  const [menuOpen, setMenuOpen] = useState(false);  //hamburger menu state variable
+
   return (
     <nav>
-      <NavLink to="/" style={({ isActive }) => ({
-        color: isActive ? "rgb(132, 158, 149)" : "black",
-        fontWeight: isActive ? "bold" : "normal",
-        textDecoration: "none",
-        marginRight: "15px",
-        })}>Home</NavLink>
 
+      <button
+        className="hamburger"
+        onClick={() => setMenuOpen(!menuOpen)} >
+        ☰  
+      </button>
 
-      <NavLink
-        to="/contactus"
-        style={({ isActive }) => ({
+      <div className={menuOpen ? "nav-links open" : "nav-links"} >
+
+        <NavLink to="/" style={({ isActive }) => ({
           color: isActive ? "rgb(132, 158, 149)" : "black",
           fontWeight: isActive ? "bold" : "normal",
           textDecoration: "none",
           marginRight: "15px",
-        })}
-        >Contact Us
-      </NavLink>
+          })}
+          >Home
+        </NavLink>
 
-      <NavLink
-        to="/mypuzzles"
-        style={({ isActive }) => ({
+        <NavLink to="/contactus" style={({ isActive }) => ({
           color: isActive ? "rgb(132, 158, 149)" : "black",
           fontWeight: isActive ? "bold" : "normal",
           textDecoration: "none",
           marginRight: "15px",
-        })}
-        >My Puzzles
-      </NavLink> 
+          })}
+          >Contact Us
+        </NavLink>
 
-      <NavLink
-        to="/puzzlesuggestions"
-        style={({ isActive }) => ({
+        <NavLink to="/mypuzzles" style={({ isActive }) => ({
           color: isActive ? "rgb(132, 158, 149)" : "black",
           fontWeight: isActive ? "bold" : "normal",
           textDecoration: "none",
           marginRight: "15px",
-        })}
-        >Puzzle Suggestions
-      </NavLink>
+          })}
+          >My Puzzles
+        </NavLink> 
+
+        <NavLink to="/puzzlesuggestions" style={({ isActive }) => ({
+          color: isActive ? "rgb(132, 158, 149)" : "black",
+          fontWeight: isActive ? "bold" : "normal",
+          textDecoration: "none",
+          marginRight: "15px",
+          })}
+          >Puzzle Suggestions
+        </NavLink>
+
+      </div> 
 
     </nav>
   );
