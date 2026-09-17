@@ -9,7 +9,6 @@ const Header = () => {
                 The Last Piece
             </div>
             <Animation/>
-            {/*<img src="/logo.png" alt="orange puzzle piece logo" className="header-logo" /> */}
         </header>
     )
 }
