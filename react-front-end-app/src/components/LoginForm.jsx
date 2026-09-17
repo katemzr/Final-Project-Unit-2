@@ -24,7 +24,7 @@ function LoginForm ({onLogin}) {
         }
 
         if (formData && formData.email) {
-            if (formData.email !== "admin@admin.com") {
+            if (formData.email !== "user@puzzles.com") {
                 tempErrors.email = "Incorrect credentials.";
                 isValid = false;
             }
@@ -53,7 +53,7 @@ return (
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email (admin@admin.com):</label>
+          <label>Email (user@puzzles.com):</label>
           <input
             type="email"
             name="email"

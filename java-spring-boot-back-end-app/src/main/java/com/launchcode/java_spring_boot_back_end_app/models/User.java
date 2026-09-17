@@ -1,6 +1,8 @@
 package com.launchcode.java_spring_boot_back_end_app.models;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +15,11 @@ public class User {
     private int id;
 
     private String email;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) //preventing Spring from sending password back in responses
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Puzzle> puzzles = new ArrayList<>();
 

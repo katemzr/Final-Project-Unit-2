@@ -147,3 +147,171 @@ body {
 .footer {
  padding-top: 100px;
 }
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgb(194, 191, 191);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-group label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+    padding: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+    border-color: rgb(132, 158, 149);
+    outline: none;
+}
+
+.contact-form-group textarea {
+    resize: vertical;
+}
+
+.suggestion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.suggestion-card {
+    width: 280px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+.suggestion-card img,
+.card img {
+    object-fit: contain;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+}
+
+/*Tablet screens*/
+@media screen and (max-width: 1024px) {
+    header {
+        font-size: 45px;
+    }
+    body {
+        padding: 1.5rem;
+    }
+
+    .homepage-main {
+        font-size: large;
+    }
+    
+    .form {
+        max-width: 700px;
+        padding: 1.5rem;
+    }
+
+    .form-group {
+        flex: 1 1 250px;
+    }
+
+    .suggestion-container,
+    .card-container {
+        justify-content: center;
+    }
+}
+
+/*Phone screens*/
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    header {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    body {
+        padding: 1rem;
+    }
+
+    .header-logo {
+        height: 55px;
+        margin-left: 5px;
+    }
+
+    .homepage-main {
+        font-size: medium;
+    }
+
+    .card-container,
+    .suggestion-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .suggestion-card {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .form,
+    .contact-form {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .form form {
+        flex-direction: column;
+    }
+
+    .form-group {
+        flex: 1 1 auto;
+    }
+}

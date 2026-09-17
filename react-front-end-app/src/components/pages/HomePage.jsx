@@ -3,7 +3,7 @@ const HomePage= () => {
     return (
         <main className="homepage-main">
             <div>       
-                <h1>Welcome to The Last Piece!</h1>  
+                <h1>Welcome to The Last Piece!🧩</h1>  
                
                 <p>
                 Whether you're a casual puzzler or a dedicated enthusiast, this is your home for everything puzzle-related.

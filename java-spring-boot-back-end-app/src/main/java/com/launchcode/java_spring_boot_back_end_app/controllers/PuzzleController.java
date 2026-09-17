@@ -1,7 +1,9 @@
 package com.launchcode.java_spring_boot_back_end_app.controllers;
 
 import com.launchcode.java_spring_boot_back_end_app.models.Puzzle;
+import com.launchcode.java_spring_boot_back_end_app.models.User;
 import com.launchcode.java_spring_boot_back_end_app.repositories.PuzzleRepository;
+import com.launchcode.java_spring_boot_back_end_app.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,6 +14,8 @@ import java.util.List;
 public class PuzzleController {
     @Autowired
     private PuzzleRepository puzzleRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping
     public List<Puzzle>getAllPuzzles() {
@@ -25,6 +29,17 @@ public class PuzzleController {
 
     @PostMapping
     public Puzzle createPuzzle(@RequestBody Puzzle puzzle) {
+        return puzzleRepository.save(puzzle);
+    }
+
+    @PostMapping("/user/{userId}")
+    public Puzzle createPuzzleForUser(@PathVariable int userId, @RequestBody Puzzle puzzle) {
+        User user = userRepository.findById(userId).orElse(null);
+
+        if (user == null) {
+            return null;
+        }
+        puzzle.setUser(user);
         return puzzleRepository.save(puzzle);
     }
 
