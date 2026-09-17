@@ -12,7 +12,7 @@ const PuzzleSuggestionsPage = () => {
         brand: "SunsOut",
         artist: "Annie Lee",
         pieceCount: 500,
-        description: "Featuring the iconic Black Americana artwork of Annie Lee, *My Cup Runneth Over* captures a familiar Monday-morning feeling. The scene depicts a tired woman struggling to get out of bed and face another day, while reflecting the humor, resilience, and everyday experiences that make Lee's artwork so memorable."
+        description: "Annie Lee's My Cup Runneth Over depicts a woman seated with an open Bible in her lap, turning to prayer during a difficult moment. Lee's signature faceless style uses body language to convey themes of faith, gratitude, and strength. As a jigsaw puzzle, the warm colors, detailed room, and meaningful imagery make this a thoughtful and engaging puzzle to put together."
 
     },{
         id: "2",
