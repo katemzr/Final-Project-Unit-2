@@ -1,5 +1,6 @@
 import DeletePuzzle from "./DeletePuzzle";
 import EditPuzzle from "./EditPuzzle";
+import { useState } from "react";
 
 const PuzzleCard = ({ 
     id, 
@@ -24,6 +25,8 @@ const PuzzleCard = ({
     onDeletePuzzle
  }) => {
     
+    const [showDetails, setShowDetails] = useState(false);
+
     return (
         <div className="card">
             <div>
@@ -40,22 +43,30 @@ const PuzzleCard = ({
             </div>
 
             <div>
-                <p>{id}</p>
-                <p>Brand: {brand}</p>
-                <p>Artist: {artist}</p>
+                <p>Brand: {brand}</p>              
                 <p>Piece Count: {pieceCount}</p>
-                <p>Height: {height}</p>
-                <p>Width: {width}</p>
-                <p>Location: {location}</p>
-                <p>Purchase Date: {purchaseDate}</p>
-                <p>Retailer: {retailer}</p>
-                <p>Start Date: {startDate}</p>
-                <p>Progress Percent: {progressPercent}</p>
-                <p>Completion Date: {completionDate}</p>
-                <p>Completion Time: {completionTime}</p>
-                <p>On Loan: {onLoan ? "Yes" : "No"}</p>
-                <p>Notes: {notes}</p>
             </div>
+
+            {showDetails && (
+                <div>
+                    <p>Artist: {artist}</p>
+                    <p>Height: {height}</p>
+                    <p>Width: {width}</p>
+                    <p>Location: {location}</p>
+                    <p>Purchase Date: {purchaseDate}</p>
+                    <p>Retailer: {retailer}</p>
+                    <p>Start Date: {startDate}</p>
+                    <p>Progress Percent: {progressPercent}</p>
+                    <p>Completion Date: {completionDate}</p>
+                    <p>Completion Time: {completionTime}</p>
+                    <p>On Loan: {onLoan ? "Yes" : "No"}</p>
+                    <p>Notes: {notes}</p>
+                </div>
+            )}
+
+            <button onClick={() => setShowDetails(!showDetails)}>
+                {showDetails ? "Hide Details" : "Show Details"}
+            </button>
 
             <div>
                 <EditPuzzle onEdit={() => onEditPuzzle(id)} />
