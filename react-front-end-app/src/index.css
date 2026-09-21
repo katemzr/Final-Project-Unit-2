@@ -31,12 +31,6 @@ body {
     box-shadow:  0 4px 6px;
 }
 
-.puzzle-image {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-}
-
 .puzzle-summary {
     text-align: center;
 }

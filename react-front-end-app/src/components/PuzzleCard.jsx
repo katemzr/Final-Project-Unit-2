@@ -32,7 +32,9 @@ const PuzzleCard = ({
             <div>
                 <img 
                     src={imageURL || "/images/Placeholder.jpg"} 
-                    alt={alt} 
+                    alt={alt}
+                    width={200}
+                    height={300} 
                 />
             </div>
 
