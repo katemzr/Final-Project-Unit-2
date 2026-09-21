@@ -38,37 +38,36 @@ const PuzzleCard = ({
                 />
             </div>
 
-            <div>
-                <p><b>{title}</b></p>
+            <div className="puzzle-summary">
+                <h3>{title}</h3>
+                <p>{brand} · {pieceCount} pieces</p>
             </div>
 
-            <div>
-                <p>Brand: {brand}</p>              
-                <p>Piece Count: {pieceCount}</p>
-            </div>
-
-            {showDetails && (
-                <div>
-                    <p>Artist: {artist}</p>
-                    <p>Height: {height}</p>
-                    <p>Width: {width}</p>
-                    <p>Location: {location}</p>
-                    <p>Purchase Date: {purchaseDate}</p>
-                    <p>Retailer: {retailer}</p>
-                    <p>Start Date: {startDate}</p>
-                    <p>Progress Percent: {progressPercent}</p>
-                    <p>Completion Date: {completionDate}</p>
-                    <p>Completion Time: {completionTime}</p>
-                    <p>On Loan: {onLoan ? "Yes" : "No"}</p>
-                    <p>Notes: {notes}</p>
-                </div>
-            )}
-
-            <button onClick={() => setShowDetails(!showDetails)}>
+            <button 
+                className="details-button"
+                onClick={() => setShowDetails(!showDetails)}
+            >
                 {showDetails ? "Hide Details" : "Show Details"}
             </button>
 
-            <div>
+            {showDetails && (
+                <div className="puzzle-details">
+                    <p><b>Artist:</b> {artist}</p>
+                    <p><b>Height:</b> {height}</p>
+                    <p><b>Width:</b> {width}</p>
+                    <p><b>Location:</b> {location}</p>
+                    <p><b>Purchase Date:</b> {purchaseDate}</p>
+                    <p><b>Retailer:</b> {retailer}</p>
+                    <p><b>Start Date:</b> {startDate}</p>
+                    <p><b>Progress Percent:</b> {progressPercent}</p>
+                    <p><b>Completion Date:</b> {completionDate}</p>
+                    <p><b>Completion Time:</b> {completionTime}</p>
+                    <p><b>On Loan:</b> {onLoan ? "Yes" : "No"}</p>
+                    <p><b>Notes:</b> {notes}</p>
+                </div>
+            )}
+
+            <div className="card-buttons">
                 <EditPuzzle onEdit={() => onEditPuzzle(id)} />
                 <DeletePuzzle onDelete={() => onDeletePuzzle(id)} />
             </div>
