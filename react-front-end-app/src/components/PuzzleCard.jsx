@@ -31,10 +31,14 @@ const PuzzleCard = ({
         <div className="card">
             <div>
                 <img 
-                    src={imageURL || "/images/Placeholder.jpg"} 
+                    src={imageURL || "/images/Placeholder.jpg"} //if no image URL provided, then use the placeholder.
                     alt={alt}
                     width={200}
                     height={300} 
+                    onError={(event) => {
+                        event.currentTarget.onerror = null;
+                        event.currentTarget.src = "/images/Placeholder.jpg";  //if image URL provided does not work, use placeholder.                      
+                    }}  
                 />
             </div>
 
