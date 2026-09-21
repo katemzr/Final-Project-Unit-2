@@ -81,4 +81,3 @@ const PuzzleCard = ({
 }
 
 export default PuzzleCard;
-
